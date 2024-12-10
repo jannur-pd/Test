@@ -22,18 +22,18 @@ urlpatterns = [
     path('admin/', admin.site.urls), # работает
     path('auth', AuthApiView.as_view()), #зареганные через терминал проходят, а через админку - НЕТ
     path('logout', LogOutApiView.as_view()), # NO
-    path('photographers', PhotographerAPIView.as_view()),  # работает
+    path('photographers', PhotographerAPIView.as_view()),  # работает только ГЕТ
     path('quotes', QuotesApiView.as_view()),  # работает
     path('phsearch', PhotographerSearchAPIView.as_view()),  # работает
     path('newph', NewPhotographersApiView.as_view()),  # работает
     path('register/', RegisterView.as_view()),  # работает
 
-    path('profpic/', ProfilePicAPIView.as_view()),
-    path('reviews', ReviewCreateAPIView.as_view()), #NO, через админку работает
-    path('addportfolio', PhotoCreateAPIView.as_view()), #NO, через админку работает
+    path('profpic/', ProfilePicAPIView.as_view()), # NO
+    path('reviews', ReviewCreateAPIView.as_view()), # NO, через админку работает
+    path('addportfolio', PhotoCreateAPIView.as_view()), # NO, через админку работает
 
-    path('profile/', ProfileView.as_view()),
-    path('profile/update/', UpdateProfileView.as_view()),
+    path('profile/', ProfileView.as_view()), # NO
+    path('profile/update/', UpdateProfileView.as_view()), # NO
 
 
 ]
